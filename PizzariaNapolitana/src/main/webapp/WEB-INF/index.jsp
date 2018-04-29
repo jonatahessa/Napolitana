@@ -15,7 +15,7 @@
         <script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script>
         <link href="https://fonts.googleapis.com/css?family=Acme|Lobster" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
-        <title>Pizzaria Donatello</title>
+        <title>Pizzaria Napolitana</title>
     </head>
     <body>
         <header class="static-header">
@@ -44,9 +44,37 @@
         <div class="container-fluid">
 
             <div class="row justify-content-center">
-                <div id="section1" class="col-xs-12 col-sm-12 col-md-10 col-lg-8 backgrounded section1">
+                <div id="section1" class="col-xs-12 col-sm-12 col-md-10 col-lg-10 backgrounded section1 sessoes">
                     <h1 class="fonte-lobster">Home</h1>
                     <hr/>
+
+                    <div id="carouselExampleIndicators" class="carousel slide carousel-margin" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" src="./_imagens/pizza1.jpg" alt="First slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="./_imagens/pizza2.jpg" alt="Second slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="./_imagens/pizza3.jpg" alt="Third slide">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                             <img class="img-fluid" src="./_imagens/pizzahome.jpg" alt="imagem de uma pizza">
@@ -61,7 +89,7 @@
             </div>
 
             <div class="row justify-content-center">
-                <div id="section2" class="col-xs-12 col-sm-12 col-md-10 col-lg-8 backgrounded section2">
+                <div id="section2" class="col-xs-12 col-sm-12 col-md-10 col-lg-10 backgrounded section2 sessoes">
                     <h1 class="fonte-lobster">Promoções</h1>
                     <hr/>
                     <c:forEach var="promocao" items="${promocoes}">
@@ -77,7 +105,7 @@
             </div>
 
             <div class="row justify-content-center">
-                <div id="section3" class="col-xs-12 col-sm-12 col-md-10 col-lg-8 backgrounded section3">
+                <div id="section3" class="col-xs-12 col-sm-12 col-md-10 col-lg-10 backgrounded section3 sessoes">
                     <h1 class="fonte-lobster">Cardápio</h1>
                     <hr/>
                     <div class="row justify-content-center">
@@ -103,11 +131,11 @@
                             </button>
                         </div>
                     </div>
+                </div>
             </div>
-          </div>
 
             <div class="row justify-content-center">
-                <div id="section4" class="col-xs-12 col-sm-12 col-md-10 col-lg-8 backgrounded section4">
+                <div id="section4" class="col-xs-12 col-sm-12 col-md-10 col-lg-10 backgrounded section4 sessoes">
                     <h1 class="fonte-lobster">Localização</h1>
                     <hr/>
                     <h4 class="text-center">Avenida Nossa Senhora Do Sabará, 4355 - Vila Emir, São Paulo - SP</h4>
@@ -116,7 +144,7 @@
             </div>
 
             <div class="row justify-content-center">
-                <div id="section5" class="col-xs-12 col-sm-12 col-md-10 col-lg-8 backgrounded section5">
+                <div id="section5" class="col-xs-12 col-sm-12 col-md-10 col-lg-10 backgrounded section5 sessoes">
                     <h1 class="fonte-lobster">Contato</h1>
                     <hr/>
                     <div class="row justify-content-center">
@@ -128,9 +156,9 @@
                                 <img class="col-1" src="./_imagens/whatsapp.png" alt="whatsapp">
                             </h2>
                             <h3 class="text-center">Horário de funcionamento</h3>
-                            <h4 class="text-center">Domingo a Quinta das 18:00h às 23:30h</h4>
+                            <h4 class="text-center">Terça a Quinta e Domingo das 18:00h às 23:00h</h4>
                             <h4 class="text-center">Sexta e Sábado das 18:00h às 00:00h</h4>
-                            <p class="text-center">Copyright (c) Pizzaria Napolitana Copyright Holder All Rights Reserved.</p>
+                            <p class="text-center">Copyright (c) Napolitana Buono Pizza Copyright Holder All Rights Reserved.</p>
                             <p class="text-center">Developed by Jonata Hessa</p>
                         </div>
                     </div>
@@ -217,7 +245,8 @@
                                 <li class="menu-category titulopreco">
                                     <div class="">
                                         <p class="titulo text-danger"><strong>${porcao.codigo} - ${porcao.nome}</strong></p>
-                                        <p class="preco text-success"><strong>R$ ${porcao.preco}</strong></p>
+                                        <p class="preco text-success"><strong>${porcao.preco}</strong></p>
+                                        <p class="preco text-success"><strong> ${porcao.precoBroto}</strong></p>
                                         <p class="descricao text-dark">${porcao.descricao}</p>
                                         <hr class="linha-preta"/>
                                     </div>

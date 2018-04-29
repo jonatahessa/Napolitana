@@ -63,8 +63,9 @@ body .static-header img {
         cursor: pointer;
     }
 
-    .donatello {
-      font-size: 100px;
+    .sessoes {
+      margin: 0;
+      padding-top: 80px;
     }
 }
 
@@ -102,6 +103,11 @@ body .static-header img {
 
     .no-mobile {
       display: none;
+    }
+
+    .sessoes {
+      margin: 0;
+      padding-top: 190px;
     }
 }
 
@@ -202,7 +208,6 @@ body .container__content > div.section4 {
 }
 
 .backgrounded {
-    padding-top: 40px;
     background-color: #FFFFFF;
     opacity: 0.9;
 }
@@ -255,4 +260,8 @@ body .container__content > div.section4 {
   border-top: 1px solid #777;
   margin: 1em 0;
   padding: 0;
+}
+
+.carousel-margin {
+  margin-bottom: 40px;
 }
